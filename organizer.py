@@ -34,7 +34,7 @@ def organize_nifti(input_folder, output_folder):
         metadata['SeriesDescription'] = DEFAULT_PROTOCOL
         metadata['SeriesNumber'] = DEFAULT_REPETITION
         metadata['PatientID'] = nii_file_basename.split('_')[0]
-        metadata['StudyID'] = nii_file_basename.split('_')[1]
+        metadata['StudyID'] = nii_file_basename.split('_')[1][:-4]
 
         nii_file_output_fullpath = output_folder
         for attribute in DEFAULT_ORGANISATION:
