@@ -19,7 +19,8 @@ def main():
     args_parser.add_argument("output_folder")
     args = args_parser.parse_args()
 
-    os.makedirs(args.output_folder, exist_ok=True)
+    if not os.path.exists(args.output_folder):
+        os.makedirs(args.output_folder)
 
     organize_nifti(args.input_folder, args.output_folder)
 
