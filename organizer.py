@@ -4,6 +4,7 @@ import argparse
 import logging
 import os
 import glob
+import shutil
 
 
 DEFAULT_PROTOCOL = "T1"
@@ -40,6 +41,12 @@ def organize_nifti(input_folder, output_folder):
         nii_file_output_fullpath = output_folder
         for attribute in DEFAULT_ORGANISATION:
             nii_file_output_fullpath = os.path.join(nii_file_output_fullpath, metadata[attribute])
+
+        if not os.path.exists(nii_file_output_fullpath):
+            os.makedirs(nii_file_output_fullpath)
+        logging.info("Copying %s to %s..." % (nii_file, nii_file_output_fullpath))
+        shutil.copy2(nii_file, nii_file_output_fullpath)
+    logging.info("DONE")
 
 
 if __name__ == '__main__':
