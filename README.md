@@ -21,6 +21,6 @@ Clone this project.
 
 Run `organizer.py <input_folder> <output_folder>` where
 
-* `<input_folder>` contains full-brain T1-weighted MRI data in nifti format and named `<patient_id>_<visit_id>`
+* `<input_folder>` contains full-brain T1-weighted MRI data in nifti format and named `<patient_id>_<visit_id>.nii`
 * `<output_folder>` is an empty (or non-existing) folder that will contain the organised data
 
